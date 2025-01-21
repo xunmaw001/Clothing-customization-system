@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FuzhuangdingzhiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FuzhuangdingzhiEntity" id="fuzhuangdingzhiMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="fuzhuangmingcheng" column="fuzhuangmingcheng"/>
+        <result property="mianliao" column="mianliao"/>
+        <result property="fuzhuangyanse" column="fuzhuangyanse"/>
+        <result property="chima" column="chima"/>
+        <result property="dingzhineirong" column="dingzhineirong"/>
+        <result property="dingzhijiage" column="dingzhijiage"/>
+        <result property="dingzhishuliang" column="dingzhishuliang"/>
+        <result property="zongjiage" column="zongjiage"/>
+        <result property="xiadanshijian" column="xiadanshijian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="youjidizhi" column="youjidizhi"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FuzhuangdingzhiVO" >
+		SELECT * FROM fuzhuangdingzhi  fuzhuangdingzhi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FuzhuangdingzhiVO" >
+		SELECT  fuzhuangdingzhi.* FROM fuzhuangdingzhi  fuzhuangdingzhi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FuzhuangdingzhiView" >
+
+		SELECT  fuzhuangdingzhi.* FROM fuzhuangdingzhi  fuzhuangdingzhi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FuzhuangdingzhiView" >
+		SELECT * FROM fuzhuangdingzhi  fuzhuangdingzhi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>

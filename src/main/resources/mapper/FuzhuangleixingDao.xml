@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FuzhuangleixingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FuzhuangleixingEntity" id="fuzhuangleixingMap">
+        <result property="fuzhuangleixing" column="fuzhuangleixing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FuzhuangleixingVO" >
+		SELECT * FROM fuzhuangleixing  fuzhuangleixing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FuzhuangleixingVO" >
+		SELECT  fuzhuangleixing.* FROM fuzhuangleixing  fuzhuangleixing
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FuzhuangleixingView" >
+
+		SELECT  fuzhuangleixing.* FROM fuzhuangleixing  fuzhuangleixing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FuzhuangleixingView" >
+		SELECT * FROM fuzhuangleixing  fuzhuangleixing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
